@@ -1,0 +1,1 @@
+web: gunicorn ontoyin.wsgi --log-file -
