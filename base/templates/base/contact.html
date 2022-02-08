@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Contact</h1>
+{% for contact in contacts %}
+<div class="contact">
+    {% if contact.source %}
+        <a href="{{ contact.source }}" target="_blank" class="contactInfo">
+            <img src="{{ contact.avatar.url }}" alt="{{contact.name}} avatar">
+            <span class="contactName">{{ contact.name }}</span>
+            <small>{{ contact.handle }}</small>
+        </a>
+    {% elif contact.source_email %}
+        <a href="mailto:{{ contact.source_email }}" target="_blank" class="contactInfo">
+            <img src="{{ contact.avatar.url }}" alt="{{contact.name}} avatar">
+            <span class="contactName">{{ contact.name }}</span>
+            <small>{{ contact.handle }}</small>
+        </a>
+    {% else %}
+        <a href="" class="contactInfo">
+            <img src="{{ contact.avatar.url }}" alt="{{contact.name}} avatar">
+            <span class="contactName">{{ contact.name }}</span>
+            <small>{{ contact.handle }}</small>
+        </a>
+    {% endif %}
+        
+</div>
+{% endfor %}
+{% endblock content %}
+{% block quote %}
+    {% for say in saying%}
+    <p>{{say.title}}- "{{say.content}}"</p>
+    {% endfor %}
+{% endblock quote %}
+{% block updates %}
+    {% for update in updates%}
+        <h5>{{update.topic}}</h5>
+        <p>{{update.information}}</p>
+    {% endfor %}
+{% endblock updates %}

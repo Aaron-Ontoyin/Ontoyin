@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<h2>Uploads</h2>
+{% for upload in uploads %}
+<div>
+    <a href="{{ upload.url }}">
+        <small>{{ upload.title }}</small>
+        <img src="{{ upload.info_pic.url }}" alt="Pic" class='info_pic'>
+        <p>{{ upload.info }}</p>
+        {{ line }}
+    </a>
+</div>
+{% endfor %}
+{% endblock content %}
+
+{% block quote %}
+    {% for say in saying%}
+    <p>{{say.title}}- "{{say.content}}"</p>
+    {% endfor %}
+{% endblock quote %}
+
+{% block updates %}
+    {% for update in updates%}
+        <h5>{{update.topic}}</h5>
+        <p>{{update.information}}</p>
+    {% endfor %}
+{% endblock updates %}

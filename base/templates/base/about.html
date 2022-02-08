@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>My Profile</h1>
+<p>My full name: Aaron Ontoyin Yin</p>
+<p>You can get to know my profile well by visiting
+    any of my social media handles at 
+    <a href="{% url 'contact' %}">
+    " CONTACT"
+    </a>.
+</p>
+{% endblock content %}
+{% block quote %}
+    {% for say in saying%}
+    <p>{{say.title}}- "{{say.content}}"</p>
+    {% endfor %}
+{% endblock quote %}
+{% block updates %}
+    {% for update in updates%}
+        <div class="oneUpdate">
+            <h5>{{update.topic}}</h5>
+            <p>{{update.information}}</p>
+        </div>
+    {% endfor %}
+{% endblock updates %}

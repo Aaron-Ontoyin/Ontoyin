@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base/styles/main.css' %}">
+    <title>Yin Aaron Ontoyin-Virtual World</title>
+</head>
+<body>
+    <ul class="navBar1">
+        <li>
+            <a href="{% url 'index' %}" class="logo">
+                <!-- <img src="{% static 'base/images/logo.png' %}" alt="Aaron's symbol"> -->
+                Home
+            </a>
+        </li>
+        <li class="navPic">
+            Picture
+            <!-- <img src="{% static 'base/images/robot.jpg' %}" alt="picture"> -->
+        </li>
+        <li style="float: right;" >
+            <a href="{% url 'about' %}" class="about">
+                <img src="{% static 'base/images/profile.jpg' %}" alt="Profile pic" class="profileAvatar">
+            </a>
+        </li>
+    </ul>
+
+    <div class="navBar2-updates">
+        <div>
+            <ul class="navBar2">
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="{% url 'uploads' %}">Uploads</a></li>
+            </ul>
+        </div>
+        <div class="updatesHeader">
+            <h3>Updates</h3>
+        </div>
+    </div>
+   
+    <div class="workArea">
+        <div class="blockContent">
+            {% block content %}
+
+            {% endblock content %}
+        </div>    
+
+        <div class="updates">
+           {% block updates %}
+
+           {% endblock updates %}
+        </div>
+    </div>
+
+    <div class="endPoint">
+        <div class="bottomPic">
+            <img class="bottomSymbol" src="{% static 'base/images/symbol.jpg' %}" alt="Aaron's symbol">
+        </div>
+        <div class="quotes">
+            <h3 class="quotesTitle">Quotes</h3>
+            {% block quote %}   
+            
+            {% endblock quote %}
+        </div>
+    </div>
+
+    <div class="copyright">
+        <small>Copyright (c) 2022</small>
+    </div>
+</body>
+</html>

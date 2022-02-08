@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1 class="welcome">WELCOME</h1>
+<p class="note">I'm Yin Aaron Ontoyin<br>
+    CEO of Virtual World<br>and this
+    is a basic website about me.<br> To know more about
+    me as I permit,<br> you can navigate<br> around
+    seeking<br> the information you want. <br>
+    At the top right corner you will see my profile. <br>
+
+    
+</p>
+<p class="thanks">
+    Thanks you for visiting😀😜. <br>
+    Follow me as we move towards Virtual World🚀💻
+</p>
+{% endblock content %}
+
+{% block quote %}
+    {% for say in saying%}
+    <p>{{say.title}}- "{{say.content}}"</p>
+    {% endfor %}
+{% endblock quote %}
+
+{% block updates %}
+    {% for update in updates %}
+        <h5>{{update.topic}}</h5>
+        <p>{{update.information}}</p>
+    {% endfor %}
+{% endblock updates %}

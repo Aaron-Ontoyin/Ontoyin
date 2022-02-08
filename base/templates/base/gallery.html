@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Gallery</h1>
+{% for picture in pictures %}
+    <div class="picture">
+        <img src="{{ picture.pic.url }}" alt="Picture for {{picture.name}}.">
+        <figcaption>{{ picture.name }}</figcaption>
+    </div>
+{% endfor %}
+{% endblock content %}
+{% block quote %}
+    {% for say in saying%}
+    <p>{{say.title}}- "{{say.content}}"</p>
+    {% endfor %}
+{% endblock quote %}
+{% block updates %}
+    {% for update in updates%}
+        <h5>{{update.topic}}</h5>
+        <p>{{update.information}}</p>
+    {% endfor %}
+{% endblock updates %}
